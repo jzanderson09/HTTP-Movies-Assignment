@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
-
-const UpdateMovie = () => {
-    const [movie, setMovie] = useState({
-        title: '',
-        director: '',
-        metascore: '',
-        stars: ''
-    });
+const UpdateMovie = props => {
+    const [movie, setMovie] = useState(props.movieSelected);
 
     const changeHandler = e => {
         e.preventDefault();
