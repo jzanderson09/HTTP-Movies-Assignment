@@ -42,6 +42,7 @@ class App extends Component {
         .delete(`http://localhost:5000/api/movies/${id}`)
         .then(res => console.log('Deleted movie!' + res.data))
         .catch(err => console.log(err));
+      window.alert('Movie deleted successfully!');
     }
   }
 
