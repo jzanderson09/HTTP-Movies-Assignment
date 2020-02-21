@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 const UpdateMovie = props => {
     const [movie, setMovie] = useState(props.movieSelected);
@@ -11,9 +13,17 @@ const UpdateMovie = props => {
         });
     }
 
+    const updateMovieInfo = updatedMovie => {
+        axios
+            .put(`http://localhost:5000/api/movies/${movie.id}`, updatedMovie)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
+       return <Redirect to='/' />; 
+    }
+
     return (
         <div className='UpdateMovie'>
-            <form>
+            <form onSubmit={() => updateMovieInfo(movie)}>
                 <input
                     type='text'
                     name='title'
