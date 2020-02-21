@@ -40,7 +40,8 @@ export default class Movie extends React.Component {
         <MovieCard 
           movie={this.state.movie} 
           saveMovie={this.saveMovie} 
-          updateMovie={this.props.updateMovie} 
+          updateMovie={this.props.updateMovie}
+          deleteMovie={this.props.deleteMovie}
         />
       </div>
     );

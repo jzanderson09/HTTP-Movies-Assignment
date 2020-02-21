@@ -6,6 +6,7 @@ const MovieCard = props => {
   if (props.saveMovie && props.updateMovie) {
     return (
       <div className="movie-card">
+        <button className='delete-button' onClick={() => props.deleteMovie(id)}>X</button>
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
